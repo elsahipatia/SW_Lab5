@@ -31,7 +31,8 @@
 
         <div class="db-data" style="font-weight: bold ; font-size: large">
             <?php
-            $link = mysqli_connect("localhost","root","","quizz");
+            include "configDB.php";
+            $link = mysqli_connect($server,$user,$pass,$basededatos);
             // Check connection
             if (mysqli_connect_errno())
             {
@@ -62,7 +63,7 @@
         </div>
     </section>
     <footer class='main' id='f1'>
-        <a href='https://github.com'>Link GITHUB</a>
+        <a href='https://github.com/elsahipatia/SW_Lab3'>Link GITHUB</a>
     </footer>
 </div>
 </body>

@@ -32,12 +32,12 @@
 
         <div style="font-weight: bold ; font-size: large">
             <?php
-            $link = mysqli_connect("localhost","root","","quizz");
-
+            include "configDB.php";
+            $link = mysqli_connect($server,$user,$pass,$basededatos);
             $sql = "INSERT INTO preguntas(email, enunciado, correct, incorrect1, incorrect2, incorrect3, complejidad, tema) VALUES ('$_POST[email]','$_POST[question]','$_POST[correct]','$_POST[incorrect1]','$_POST[incorrect2]','$_POST[incorrect3]',$_POST[complexity],'$_POST[subject]')";
             if (!mysqli_query($link ,$sql))
             {
-                die('Error: '.mysqli_error($link));
+                die('Error: Fallo en el servidor, pruebe mas tarde.');
             }
             echo "Pregunta añadida correctamente.<br>";
             echo "Para visualizar las preguntas haz click " . "<a href='verPreguntas.php'>aquí</a>";
@@ -48,7 +48,7 @@
         </div>
     </section>
     <footer class='main' id='f1'>
-        <a href='https://github.com'>Link GITHUB</a>
+        <a href='https://github.com/elsahipatia/SW_Lab3'>Link GITHUB</a>
     </footer>
 </div>
 </body>
