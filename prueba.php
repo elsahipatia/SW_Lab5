@@ -47,7 +47,7 @@
             if($_FILES['examine']['tmp_name']!="")
                 $img = mysqli_real_escape_string($link,file_get_contents($_FILES['examine']['tmp_name']));
             else
-                $img = mysqli_real_escape_string($link, file_get_contents("pregunta.jpg"));
+                $img = mysqli_real_escape_string($link, file_get_contents("pregunta.png"));
             $sql = "INSERT INTO preguntas(email, enunciado, correct, incorrect1, incorrect2, incorrect3, complejidad, tema, foto) VALUES ('$email','$enunciado','$correct','$incorrect1','$incorrect2','$incorrect3',$complejidad,'$tema', '$img')";
             if (!mysqli_query($link, $sql)) {
                 die('Error: Fallo en el servidor, pruebe mas tarde.');
