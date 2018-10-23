@@ -30,7 +30,7 @@
     <section class="main" id="s1">
     
 	<div>
-		<form  method='post' id='questionForm' name='questionForm' onsubmit="return validateForm()" action="prueba.php" >
+		<form  method='post' id='questionForm' name='questionForm' enctype="multipart/form-data" action="prueba.php" >
 			<table>
 				<tr>
 					<td align="left">Email*: <input id="email" name="email" type="text" class="emailComplexSubj" required placeholder="Introduce un correo de la UPV-EHU."  pattern="^[a-z]+[0-9]{3}@ikasle\.ehu\.eus$"></td>
