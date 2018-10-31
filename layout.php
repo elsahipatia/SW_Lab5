@@ -16,16 +16,14 @@
   <body>
   <div id='page-wrap'>
 	<header class='main' id='h1'>
-		<span class="right"><a href="registro">Registrarse</a></span>
-      		<span class="right"><a href="login">Login</a></span>
+		<span class="right"><a href="registro.php">Registrarse</a></span>
+      		<span class="right"><a href="login.php">Login</a></span>
       		<span class="right" style="display:none;"><a href="/logout">Logout</a></span>
 		<h2>Quiz: el juego de las preguntas</h2>
     </header>
 	<nav class='main' id='n1' role='navigation'>
-		<span><a href='layout.html'>Inicio</a></span>
-		<span><a href='preguntaHTML5.html'>Insertar Pregunta</a></span>
+		<span><a href='layout.php'>Inicio</a></span>
 		<span><a href='creditos.html'>Creditos</a></span>
-		<span><a href='verPreguntas.php'>Ver Preguntas</a></span>
 
 	</nav>
     <section class="main" id="s1">

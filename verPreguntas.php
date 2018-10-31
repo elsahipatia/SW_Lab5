@@ -16,16 +16,31 @@
 <body>
 <div id='page-wrap'>
     <header class='main' id='h1'>
-        <span class="right"><a href="registro">Registrarse</a></span>
-        <span class="right"><a href="login">Login</a></span>
-        <span class="right" style="display:none;"><a href="/logout">Logout</a></span>
+        <span class="right"><a href="layout.php">Logout</a></span>
+        <span>
+            <?php
+            include "configDB.php";
+            $link = mysqli_connect($server,$user,$pass,$basededatos);
+            // Check connection
+            if (mysqli_connect_errno())
+            {
+                echo "Failed to connect to MySQL: " . mysqli_connect_error();
+            }
+            $email = $_GET['email'];
+            $result = mysqli_query($link,"SELECT foto FROM usuarios WHERE email = '$email'");
+            while($row = mysqli_fetch_array($result))
+            {
+                echo '<img height="60" width="60" src="data:image/*;base64,'.base64_encode($row['foto']).' "/>';
+            }
+            ?>
+        </span>
         <h2>Quiz: el juego de las preguntas</h2>
     </header>
     <nav class='main' id='n1' role='navigation'>
-        <span><a href='layout.html'>Inicio</a></span>
-        <span><a href='preguntaHTML5.html'>Insertar Pregunta</a></span>
-        <span><a href='creditos.html'>Creditos</a></span>
-        <span><a href='verPreguntas.php'>Ver Preguntas</a></span>
+        <span><a href=<?php if (isset($_GET['email'])) { echo 'layout2.php?email='. $_GET['email'];} else echo 'layout2.php'?>>Inicio</a></span>
+        <span><a href=<?php if (isset($_GET['email'])) { echo 'preguntaHTML5.php?email='.$_GET['email'];}else echo 'preguntaHTML5.php'?>>Insertar Pregunta</a></span>
+        <span><a href=<?php if (isset($_GET['email'])) { echo 'creditos2.php?email='.$_GET['email'];} else echo 'creditos2.php'?>>Creditos</a></span>
+        <span><a href=<?php if (isset($_GET['email'])) { echo 'verPreguntas.php?email='.$_GET['email'];}else echo 'verPreguntas.php'?>>Ver Preguntas</a></span>
     </nav>
     <section class="main" id="s1" >
 
@@ -50,7 +65,6 @@
 
             while($row = mysqli_fetch_array($result))
             {
-
                 echo "<tr>";
                 echo "<td style='white-space: pre-line'>" . $row['email'] . "</td>";
                 echo "<td style='white-space: pre-line'>" . $row['enunciado'] . "</td>";
