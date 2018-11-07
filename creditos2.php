@@ -41,8 +41,10 @@
         <span><a href=<?php if (isset($_GET['email'])) { echo 'preguntaHTML5.php?email='.$_GET['email'];}else echo 'preguntaHTML5.php'?>>Insertar Pregunta</a></span>
         <span><a href=<?php if (isset($_GET['email'])) { echo 'creditos2.php?email='.$_GET['email'];} else echo 'creditos2.php'?>>Creditos</a></span>
         <span><a href=<?php if (isset($_GET['email'])) { echo 'verPreguntas.php?email='.$_GET['email'];}else echo 'verPreguntas.php'?>>Ver Preguntas</a></span>
-
-	</nav>
+        <span><a href=<?php if (isset($_GET['email'])) { echo 'obtenerDatos.php?email='.$_GET['email'];}else echo 'obtenerDatos.php'?>>Obtener Datos</a></span>
+        <span><a href=<?php if (isset($_GET['email'])) { echo 'verPreguntasXML.php?email='.$_GET['email'];}else echo 'verPreguntasXML.php'?>>Ver tabla XML</a></span>
+        <span><a href=<?php if (isset($_GET['email'])) { echo 'preguntas.xml?email='.$_GET['email'];}else echo 'preguntas.xml'?>>Ver tabla XSL</a></span>
+    </nav>
     <section class="main" id="s1" >
     
 	<div style="font-weight: bold ; font-size: large">
@@ -55,7 +57,7 @@
 	</div>
     </section>
 	<footer class='main' id='f1'>
-		<a href='https://github.com/elsahipatia/SW_Lab3'>Link GITHUB</a>
+		<a href='https://github.com/elsahipatia/SW_Lab5'>Link GITHUB</a>
 	</footer>
 </div>
 </body>

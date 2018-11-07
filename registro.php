@@ -77,7 +77,7 @@
 	</div>
     </section>
 	<footer class='main' id='f1'>
-		<a href='https://github.com/elsahipatia/SW_Lab3'>Link GITHUB</a>
+		<a href='https://github.com/elsahipatia/SW_Lab5'>Link GITHUB</a>
 	</footer>
 </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

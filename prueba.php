@@ -67,11 +67,11 @@
 
             if(preg_match("/^[a-z]+[0-9]{3}@ikasle\.ehu\.eus$/",$email)!=1 ||
                 preg_match("/^.{10,}$/",$enunciado)!=1 ||
+                preg_match("/^[0-5]$/",$complejidad)!=1 ||
                 empty($correct) ||
                 empty($incorrect1) ||
                 empty($incorrect2) ||
                 empty($incorrect3) ||
-                empty($complejidad) ||
                 empty($tema))
             {
                 echo "Error en el envio de datos.";
@@ -91,13 +91,30 @@
             echo "Para visualizar las preguntas haz click " . $aux;
             mysqli_close($link);
 
-            ?>
 
+            /*Añadir información al XML */
+            if (file_exists('preguntas.xml')) {
+                $assessmentItems = simplexml_load_file('preguntas.xml');
+            } else {
+                exit('Error abriendo preguntas.xml.');
+            }
+            $item = $assessmentItems->addChild('assessmentItem');
+            $item->addAttribute('subject',$tema);
+            $item->addAttribute('author',$email);
+            $item->addChild('itemBody')->addChild('p',$enunciado);
+            $item->addChild('correctResponse')->addChild('value',$correct);
+            $itemIncorrect = $item->addChild('incorrectResponse');
+            $itemIncorrect->addChild('value',$incorrect1);
+            $itemIncorrect->addChild('value',$incorrect2);
+            $itemIncorrect->addChild('value',$incorrect3);
+
+            $assessmentItems->asXML('preguntas.xml');
+            ?>
 
         </div>
     </section>
     <footer class='main' id='f1'>
-        <a href='https://github.com/elsahipatia/SW_Lab3'>Link GITHUB</a>
+        <a href='https://github.com/elsahipatia/SW_Lab5'>Link GITHUB</a>
     </footer>
 </div>
 </body>

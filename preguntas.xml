@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="verPreguntas.xsl"?>
+<assessmentItems>
+	<assessmentItem subject="Web" author="jvadillo001@ikasle.ehu.eus">
+		<itemBody>
+			<p>Tag HTML para añadir un formulario</p>
+		</itemBody>
+		<correctResponse>
+			<value>
+				FORM
+			</value>
+		</correctResponse>
+		<incorrectResponses>
+			<value> OBJECT </value>
+			<value> TABLE </value>
+			<value> DIV </value>
+		</incorrectResponses>
+
+	</assessmentItem>
+		<assessmentItem subject="Internet" author="rarruabarrena001@ikasle.ehu.eus">
+		<itemBody>
+			<p>Este protocolo acabará funcionando
+			incluso entre dos latas unidas por un cordón</p>
+		</itemBody>
+		<correctResponse>
+			<value>
+				TCP/IP
+			</value>
+		</correctResponse>
+		<incorrectResponses>
+			<value> HTTP </value>
+			<value> SMTP </value>
+			<value> Ninguna es correcta </value>
+		</incorrectResponses>
+	</assessmentItem>
+
+	<assessmentItem subject="guapura" author="djimenez019@ikasle.ehu.eus">
+		<itemBody>
+			<p>elsa es la mas guapa del mundo?</p>
+		</itemBody>
+		<correctResponse>
+			<value>MECAGOENDIOS CLARO QUE SI</value>
+		</correctResponse>
+		<incorrectResponses>
+			<value>si</value>
+			<value>si?</value>
+			<value>talvez</value>
+		</incorrectResponses>
+	</assessmentItem>
+<assessmentItem subject="temaaaaaa" author="djimenez019@ikasle.ehu.eus"><itemBody><p>testttttttttttttttttttttttt</p></itemBody><correctResponse><value>a</value></correctResponse><incorrectResponse><value>asd</value><value>asd</value><value>a</value></incorrectResponse></assessmentItem></assessmentItems>

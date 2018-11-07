@@ -33,15 +33,20 @@
                 echo '<img height="60" width="60" src="data:image/*;base64,'.base64_encode($row['foto']).' "/>';
             }
             ?>
+
+
+
         </span>
 		<h2>Quiz: el juego de las preguntas</h2>
     </header>
 	<nav class='main' id='n1' role='navigation'>
-		<span><a href=<?php if (isset($_GET['email'])) { echo 'layout2.php?email='. $_GET['email'];} else echo 'layout2.php'?>>Inicio</a></span>
-		<span><a href=<?php if (isset($_GET['email'])) { echo 'preguntaHTML5.html?email='.$_GET['email'];}else echo 'preguntaHTML5.html'?>>Insertar Pregunta</a></span>
-		<span><a href=<?php if (isset($_GET['email'])) { echo 'creditos2.php?email='.$_GET['email'];} else echo 'creditos2.php'?>>Creditos</a></span>
-		<span><a href=<?php if (isset($_GET['email'])) { echo 'verPreguntas.php?email='.$_GET['email'];}else echo 'verPreguntas.php'?>>Ver Preguntas</a></span>
-    </nav>
+        <span><a href=<?php if (isset($_GET['email'])) { echo 'layout2.php?email='. $_GET['email'];} else echo 'layout2.php'?>>Inicio</a></span>
+        <span><a href=<?php if (isset($_GET['email'])) { echo 'preguntaHTML5.php?email='.$_GET['email'];}else echo 'preguntaHTML5.php'?>>Insertar Pregunta</a></span>
+        <span><a href=<?php if (isset($_GET['email'])) { echo 'creditos2.php?email='.$_GET['email'];} else echo 'creditos2.php'?>>Creditos</a></span>
+        <span><a href=<?php if (isset($_GET['email'])) { echo 'verPreguntas.php?email='.$_GET['email'];}else echo 'verPreguntas.php'?>>Ver Preguntas</a></span>
+        <span><a href=<?php if (isset($_GET['email'])) { echo 'obtenerDatos.php?email='.$_GET['email'];}else echo 'obtenerDatos.php'?>>Obtener Datos</a></span>
+        <span><a href=<?php if (isset($_GET['email'])) { echo 'verPreguntasXML.php?email='.$_GET['email'];}else echo 'verPreguntasXML.php'?>>Ver tabla XML</a></span>
+        <span><a href=<?php if (isset($_GET['email'])) { echo 'preguntas.xml?email='.$_GET['email'];}else echo 'preguntas.xml'?>>Ver tabla XSL</a></span></nav>
     <section class="main" id="s1">
     
 	<div>
@@ -91,7 +96,7 @@
 
 
 	  <footer class='main' id='f1'>
-		<a href='https://github.com/elsahipatia/SW_Lab3'>Link GITHUB</a>
+		<a href='https://github.com/elsahipatia/SW_Lab5'>Link GITHUB</a>
 	</footer>
 </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

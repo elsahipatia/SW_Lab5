@@ -43,47 +43,52 @@
         <span><a href=<?php if (isset($_GET['email'])) { echo 'verPreguntas.php?email='.$_GET['email'];}else echo 'verPreguntas.php'?>>Ver Preguntas</a></span>
         <span><a href=<?php if (isset($_GET['email'])) { echo 'obtenerDatos.php?email='.$_GET['email'];}else echo 'obtenerDatos.php'?>>Obtener Datos</a></span>
         <span><a href=<?php if (isset($_GET['email'])) { echo 'verPreguntasXML.php?email='.$_GET['email'];}else echo 'verPreguntasXML.php'?>>Ver tabla XML</a></span>
-        <span><a href=<?php if (isset($_GET['email'])) { echo 'preguntas.xml?email='.$_GET['email'];}else echo 'preguntas.xml'?>>Ver tabla XSL</a></span>
+        <span><a href=<?php if (isset($_GET['email'])) { echo 'preguntas.xml?email='.$_GET['email'];}else echo 'preguntas.xml'?>>Ver tabla XSL</a></span></nav>
     </nav>
     <section class="main" id="s1" >
+        <form id='xmlForm' name='xmlForm'>
+            Email: <br>
+            <input id="email" type="text"> <br>
+            <button id="searchBtn" type="button">Buscar email</button><br><br>
+            Nombre: <br>
+            <input id="nombre" type="text"><br><br>
+            Apellidos: <br>
+            <input id="apellidos" type="text"><br><br>
+            Telefono: <br>
+            <input id="tlf" type="text">
+        </form>
 
-        <div class="db-data" style="font-weight: bold ; font-size: large">
-            <?php
-            include "configDB.php";
-            $link = mysqli_connect($server,$user,$pass,$basededatos);
-            // Check connection
-            if (mysqli_connect_errno())
-            {
-                echo "Failed to connect to MySQL: " . mysqli_connect_error();
-            }
 
-            $result = mysqli_query($link,"SELECT email,enunciado,correct, foto FROM preguntas");
-            echo "<table style='width:100%' border='1'>
-            <tr>
-            <th>Autor</th>
-            <th>Enunciado</th>
-            <th>Respuesta Correcta</th>
-            <th>Imagen</th>
-            </tr>";
-
-            while($row = mysqli_fetch_array($result))
-            {
-                echo "<tr>";
-                echo "<td style='white-space: pre-line'>" . $row['email'] . "</td>";
-                echo "<td style='white-space: pre-line'>" . $row['enunciado'] . "</td>";
-                echo "<td style='white-space: pre-line'>" . $row['correct'] . "</td>";
-                echo '<td> <img height="250" width="150" src="data:image/*;base64,'.base64_encode($row['foto']).' "/>';
-                echo "</tr>";
-            }
-            echo "</table>";
-
-            mysqli_close($link);
-            ?>
-        </div>
     </section>
     <footer class='main' id='f1'>
         <a href='https://github.com/elsahipatia/SW_Lab5'>Link GITHUB</a>
     </footer>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+    $('#searchBtn').click(function () {
+        $.get('usuarios.xml',function (d) {
+            var listaEmail = $(d).find('email');
+            var listaNombre = $(d).find('nombre');
+            var listaApellido1 = $(d).find('apellido1');
+            var listaApellido2 = $(d).find('apellido2');
+            var listaTelefono = $(d).find('telefono');
+
+
+
+            //alert(listaCorreos);
+            for(var i=0;i<listaEmail.length;i++){
+                var email = listaEmail[i].childNodes[0].nodeValue;
+                if(email===$('#email').val()){
+                    $('#nombre').val(listaNombre[i].childNodes[0].nodeValue);
+                    $('#apellidos').val(listaApellido1[i].childNodes[0].nodeValue
+                        + ' ' + listaApellido2[i].childNodes[0].nodeValue);
+                    $('#tlf').val(listaTelefono[i].childNodes[0].nodeValue);
+                    return;
+                }
+            }
+        })
+    });
+</script>
 </body>
 </html>
