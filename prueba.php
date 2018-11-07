@@ -103,7 +103,7 @@
             $item->addAttribute('author',$email);
             $item->addChild('itemBody')->addChild('p',$enunciado);
             $item->addChild('correctResponse')->addChild('value',$correct);
-            $itemIncorrect = $item->addChild('incorrectResponse');
+            $itemIncorrect = $item->addChild('incorrectResponses');
             $itemIncorrect->addChild('value',$incorrect1);
             $itemIncorrect->addChild('value',$incorrect2);
             $itemIncorrect->addChild('value',$incorrect3);
